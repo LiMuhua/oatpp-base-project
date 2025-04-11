@@ -1,4 +1,4 @@
-
+﻿
 #include "AppComponent.hpp"
 
 #include "controller/UserController.hpp"
@@ -62,4 +62,5 @@ int main(int argc, const char * argv[]) {
   oatpp::base::Environment::destroy();
   
   return 0;
+  
 }

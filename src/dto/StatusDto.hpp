@@ -1,33 +1,27 @@
-
-#ifndef CRUD_STATUSDTO_HPP
-#define CRUD_STATUSDTO_HPP
-
-#include "oatpp/core/macro/codegen.hpp"
-#include "oatpp/core/Types.hpp"
-
+﻿#pragma once
+#pragma execution_character_set("utf-8")
+#define JSON_UTF8 oatpp::String("application/json; charset=utf-8")
+#include "DtoDefines.hpp"
 #include OATPP_CODEGEN_BEGIN(DTO)
 
-class StatusDto : public oatpp::DTO {
+/**
+ * @brief 状态数据传输对象 (DTO)
+ * @details 定义响应状态数据的字段结构。
+ * @author LiMuhua
+ * @date 2025-04-10
+ */
+class StatusDto : public DTO {
+    DTO_INIT(StatusDto, DTO)
 
-  DTO_INIT(StatusDto, DTO)
+    DTO_FIELD_INFO(status) { info->description = "简短的状态信息"; }
+    DTO_FIELD(String, status, "status");
 
-  DTO_FIELD_INFO(status) {
-    info->description = "Short status text";
-  }
-  DTO_FIELD(String, status);
+    DTO_FIELD_INFO(code) { info->description = "状态码"; }
+    DTO_FIELD(Int32, code, "code");
 
-  DTO_FIELD_INFO(code) {
-    info->description = "Status code";
-  }
-  DTO_FIELD(Int32, code);
-
-  DTO_FIELD_INFO(message) {
-    info->description = "Verbose message";
-  }
-  DTO_FIELD(String, message);
-
+    DTO_FIELD_INFO(message) { info->description = "详细信息"; }
+    DTO_FIELD(String, message, "message");
 };
 
 #include OATPP_CODEGEN_END(DTO)
 
-#endif //CRUD_STATUSDTO_HPP

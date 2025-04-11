@@ -2,7 +2,7 @@
 
 一个使用`Oat++`构建的完整`CRUD`服务——`UserService`示例；可以作为作为基础的项目模板使用。
 
-Forked From： [long-fu/oatpp_simple](https://github.com/long-fu/oatpp_simple)
+Forked From： [oatpp/example-crud](https://github.com/oatpp/example-crud)
 
 本示例包括：
 
@@ -21,7 +21,7 @@ Forked From： [long-fu/oatpp_simple](https://github.com/long-fu/oatpp_simple)
 
 ```shell
 |- CMakeLists.txt                        // 项目的CMakeLists.txt
-|- libs									 // 三方库依赖, 包括oatpp、sqlite等
+|- libs                                  // 三方库依赖, 包括oatpp、sqlite等
 |- resources/sql/                        // SQLite数据库的SQL迁移脚本、数据文件
 |- src/
 |   |- controller/                       // 包含REST控制器的文件夹(UserController)
@@ -33,7 +33,7 @@ Forked From： [long-fu/oatpp_simple](https://github.com/long-fu/oatpp_simple)
 |   |- SwaggerComponent.hpp              // Swagger-UI配置
 |   |- App.cpp                           // main()函数在这里
 |- test/                                 // 测试文件夹
-|- utility						         // 安装所需oatpp模块的实用脚本、CMake工具
+|- utility                               // 安装所需oatpp模块的实用脚本、CMake工具
 ```
 
 ### 构建和运行

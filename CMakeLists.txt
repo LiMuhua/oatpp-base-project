@@ -23,8 +23,8 @@ set(BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
 file(GLOB_RECURSE HEADERS "*.h" "*.hpp")
 file(GLOB_RECURSE SOURCES "*.cpp" "*.cxx" "*.cc")
 file(GLOB_RECURSE RESOURCES "*.png" "*.jpg" "*.css")
-# 排除输出目录, 不构建到项目目录
-file(GLOB_RECURSE LIBS_SOURCES "out/*/*.*" "build/*/*.*" "doc/*/*.*" "*temp*/*/*.*" "test/*.*")
+# 排除输出目录和三方依赖, 不构建到项目目录
+file(GLOB_RECURSE LIBS_SOURCES "out/*/*.*" "build/*/*.*" "libs/*/*.*" "doc/*/*.*" "*temp*/*/*.*" "test/*.*")
 list(REMOVE_ITEM HEADERS ${LIBS_SOURCES})
 list(REMOVE_ITEM SOURCES ${LIBS_SOURCES})
 list(REMOVE_ITEM RESOURCES ${LIBS_SOURCES})
@@ -77,7 +77,7 @@ if(EXISTS "${RESOURCE_DIR}")
 endif()
 
 
-# 测试用例配置
+# 测试用例配置 TODO: 配置不全编译缺失资源
 file(GLOB_RECURSE TEST_HEADERS "test/*.h" "test/*.hpp")
 file(GLOB_RECURSE TEST_SOURCES "test/*.cpp" "test/*.cxx" "test/*.cc")
 file(GLOB_RECURSE TEST_RESOURCES "test/*.png" "test/*.jpg" "test/*.css")
